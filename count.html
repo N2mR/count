@@ -19,25 +19,27 @@
         
         const button = document.getElementById('button');
         const clear = document.getElementById('clear');
+        const result = document.getElementById("result");
+        const textarea = document.getElementById('count');
 
         let getLength = ()=>{
-            let textarea = document.getElementById('count');
             let string = textarea.value.trim();
             return string.length;
         }
+
         //count
         button.addEventListener('click', function(){
-            let result = document.getElementById("result");
             result.innerHTML = "文字数:  " + getLength();
         });
+        
         //clear
         clear.addEventListener('click', function(){
-            let textarea = document.getElementById('count');
-            let result = document.getElementById('result');
-            if(textarea.value.length){
+            if(textarea.value){
+                console.log(textarea.value)
                 textarea.value = '';
                 result.innerHTML = '文字数:  0';
             }
         });
+
     </script>
 </html>
