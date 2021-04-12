@@ -5,39 +5,32 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     </head>
     <body>
-        <h3 class='mt-2 ml-2'>文字数カウント</h3>
         <div class="container mt-3">
-            <textarea name="count" id="count" rows="5" style="max-width: 1000px;  width: 100%;"></textarea>
+            <h3>文字数カウント</h3>
+            <textarea name="count" id="count" class="mt-2" rows="5" style="max-width: 1000px;  width: 100%;" onKeyup="getLength()"></textarea>
             <div>
-                <button id='button' class="btn btn-primary">count</button>
                 <button id='clear' class='btn btn-danger'>clear</button>
-                <p id='result'></p>
+                <p id='result' class="mt-1"></p>
             </div>
         </div>
     </body>
     <script>
         
-        const button = document.getElementById('button');
         const clear = document.getElementById('clear');
         const result = document.getElementById("result");
         const textarea = document.getElementById('count');
 
         let getLength = ()=>{
             let string = textarea.value.trim();
-            return string.length;
+            result.innerHTML = `文字数: ${string.length}`
         }
-
-        //count
-        button.addEventListener('click', function(){
-            result.innerHTML = "文字数:  " + getLength();
-        });
         
         //clear
         clear.addEventListener('click', function(){
             if(textarea.value){
                 console.log(textarea.value)
                 textarea.value = '';
-                result.innerHTML = '文字数:  0';
+                result.innerHTML = '文字数: 0';
             }
         });
 
