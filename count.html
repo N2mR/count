@@ -3,6 +3,7 @@
     <head>
         <title>文字数カウント</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <meta charset="utf-8">
     </head>
     <body>
         <div class="container mt-3">
@@ -28,7 +29,7 @@
         //clear
         clear.addEventListener('click', function(){
             if(textarea.value){
-                console.log(textarea.value)
+                console.log(`${textarea.value}\n\n${textarea.value.length}`)
                 textarea.value = '';
                 result.innerHTML = '文字数: 0';
             }
